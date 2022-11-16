@@ -17,9 +17,12 @@ import Profile from "../Profile/Profile";
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 z-50 w-full font-second bg-opacity-30 bg-gradient-to-r from-main/60 to-lightGray/40">
-      <nav className="h-[5rem] flex items-center px-20">
+      <nav className="h-[5rem] flex items-center px-6 lg:px-14">
         {/* navigation logo */}
-        <Link href="/" className="text-xl font-bold tracking-wide">
+        <Link
+          href="/"
+          className="text-2xl font-bold tracking-wide duration-300 hover:text-accent"
+        >
           Funiro.
         </Link>
 
@@ -29,7 +32,7 @@ const Header = () => {
             <li>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-md"
+                className="inline-flex items-center gap-2 font-medium duration-300 hover:text-accent"
               >
                 Products{" "}
                 <span>
@@ -41,7 +44,7 @@ const Header = () => {
             <li>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-md"
+                className="inline-flex items-center gap-2 font-medium duration-300 hover:text-accent"
               >
                 Rooms{" "}
                 <span>
@@ -53,7 +56,7 @@ const Header = () => {
             <li>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-md"
+                className="inline-flex items-center gap-2 font-medium duration-300 hover:text-accent"
               >
                 Inspiration{" "}
               </Link>
@@ -68,12 +71,12 @@ const Header = () => {
         <div className="flex items-center gap-[.9rem] ml-auto">
           {/* Wishlist */}
           <span className="cursor-pointer">
-            <HeartIcon className="w-6 h-6" />
+            <HeartIcon className="w-6 h-6 duration-300 hover:text-accent" />
           </span>
 
           {/* Cart */}
           <span className="cursor-pointer">
-            <ShoppingCartIcon className="w-6 h-6" />
+            <ShoppingCartIcon className="w-6 h-6 duration-300 hover:text-accent" />
           </span>
 
           {/* Profile */}
