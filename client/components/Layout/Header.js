@@ -1,8 +1,11 @@
 import React from "react";
 
-// Arrow icon
-import { IoIosArrowDown } from "react-icons/io";
-import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
+import {
+  HeartIcon,
+  ShoppingCartIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 
 // Link
 import Link from "next/link";
@@ -30,7 +33,7 @@ const Header = () => {
               >
                 Products{" "}
                 <span>
-                  <IoIosArrowDown />
+                  <ChevronDownIcon className="w-4 h-4" />
                 </span>
               </Link>
             </li>
@@ -42,7 +45,7 @@ const Header = () => {
               >
                 Rooms{" "}
                 <span>
-                  <IoIosArrowDown />
+                  <ChevronDownIcon className="w-4 h-4" />
                 </span>
               </Link>
             </li>
@@ -65,12 +68,12 @@ const Header = () => {
         <div className="flex items-center gap-[.9rem] ml-auto">
           {/* Wishlist */}
           <span className="cursor-pointer">
-            <AiOutlineHeart size={22} />
+            <HeartIcon className="w-6 h-6" />
           </span>
 
           {/* Cart */}
           <span className="cursor-pointer">
-            <AiOutlineShoppingCart size={22} />
+            <ShoppingCartIcon className="w-6 h-6" />
           </span>
 
           {/* Profile */}

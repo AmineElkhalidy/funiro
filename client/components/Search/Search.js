@@ -1,7 +1,7 @@
 import React from "react";
 
 // Search icon
-import { BiSearch } from "react-icons/bi";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const Search = () => {
   return (
@@ -10,7 +10,7 @@ const Search = () => {
       className="flex items-center ml-6 h-[2.25rem] w-[30%] rounded-md overflow-hidden"
     >
       <span className="inline-flex items-center ml-2">
-        <BiSearch size={20} />
+        <MagnifyingGlassIcon className="w-5 h-5" />
       </span>
 
       <input
