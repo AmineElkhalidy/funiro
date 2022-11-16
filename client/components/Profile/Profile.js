@@ -4,7 +4,13 @@ import React from "react";
 import Image from "next/image";
 
 const Profile = () => {
-  return <Image src={""} className="rounded-full w-7 h-7 bg-accent" />;
+  return (
+    <Image
+      src={""}
+      alt="User profile"
+      className="rounded-full w-7 h-7 bg-accent"
+    />
+  );
 };
 
 export default Profile;
