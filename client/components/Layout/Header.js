@@ -16,10 +16,10 @@ import Profile from "../Profile/Profile";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full font-second bg-opacity-30 bg-gradient-to-r from-main to-lightGray">
+    <header className="fixed top-0 left-0 z-50 w-full font-second bg-opacity-30 bg-gradient-to-r from-main/60 to-lightGray/40">
       <nav className="h-[5rem] flex items-center px-20">
         {/* navigation logo */}
-        <Link href="/" className="text-xl font-bold tracking-wider">
+        <Link href="/" className="text-xl font-bold tracking-wide">
           Funiro.
         </Link>
 
