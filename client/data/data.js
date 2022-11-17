@@ -25,3 +25,5 @@ export const heroData = [
     surface: "Rp 17.000.000",
   },
 ];
+
+export const images = [HeroImg1, HeroImg2, HeroImg3];
