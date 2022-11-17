@@ -166,6 +166,9 @@ const Hero = () => {
         <h2 className="text-3xl font-bold text-center text-darkGray">
           Our Products
         </h2>
+
+        {/* Products container */}
+        <div className="grid"></div>
       </section>
     </React.Fragment>
   );
