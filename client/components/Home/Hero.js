@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 
 // Data
 import { heroData } from "../../data/data";
+import { featuresData } from "../../data/data";
 
 // Images
 import { images } from "../../data/data";
@@ -134,6 +135,37 @@ const Hero = () => {
             </SwiperSlide>
           </Swiper>
         </div>
+      </section>
+
+      {/* Features section */}
+      <section className="" id="features">
+        {/* Container */}
+        <div className="grid justify-center gap-16 py-12 md:grid-cols-2 md:gap-12 md:place-items-center lg:grid-cols-4 lg:px-16 ">
+          {featuresData.map((feature) => (
+            <div
+              key={feature.id}
+              className="flex flex-col items-center justify-center space-y-6 md:flex-row md:space-y-0 md:space-x-6 md:justify-start"
+            >
+              {/* Image */}
+              <Image src={feature.image} alt="" />
+
+              {/* Data container */}
+              <div className="text-center md:text-left">
+                <h3 className="text-lg font-medium text-black">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray">{feature.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Products section */}
+      <section id="products" className="mt-6">
+        <h2 className="text-3xl font-bold text-center text-darkGray">
+          Our Products
+        </h2>
       </section>
     </React.Fragment>
   );
