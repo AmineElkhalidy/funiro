@@ -12,7 +12,7 @@ function Products() {
       <div className="flex gap-8">
         <Filters />
         <div>
-          <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8">
             <Product />
             <Product />
             <Product />
