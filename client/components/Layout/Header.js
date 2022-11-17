@@ -16,7 +16,7 @@ import Profile from "../Profile/Profile";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full font-second bg-opacity-30 bg-gradient-to-r from-main/60 to-lightGray/40">
+    <header className="fixed top-0 left-0 z-50 w-full font-second bg-gradient-to-r from-main/60 to-lightGray/40">
       <nav className="h-[5rem] flex items-center px-6 lg:px-14">
         {/* navigation logo */}
         <Link
