@@ -209,10 +209,10 @@ const Hero = () => {
 
                 {/* Overlap content */}
                 <div className="hidden group-hover:block">
-                  <div className="absolute top-0 left-0 z-50 w-full h-full bg-black opacity-40">
+                  <div className="absolute top-0 left-0 z-50 w-full h-full bg-black bg-opacity-40">
                     <div className="flex items-center justify-center h-full">
                       <div className="space-y-4 text-center">
-                        <button className="px-8 py-2 text-sm font-medium bg-white text-main">
+                        <button className="px-8 py-3 text-sm font-medium bg-white text-main">
                           Add to cart
                         </button>
 
@@ -243,6 +243,14 @@ const Hero = () => {
             Show More
           </Link>
         </div>
+      </section>
+
+      {/* Tips section */}
+      <section id="tips">
+        <h2 className="my-10 text-3xl font-bold text-center text-darkGray">
+          Tips & Tricks
+        </h2>
+        <div></div>
       </section>
     </React.Fragment>
   );
