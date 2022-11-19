@@ -23,6 +23,9 @@ import { images } from "../../data/data";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { HeartIcon, ShareIcon } from "@heroicons/react/24/outline";
 
+// Furniture image
+import Furniture from "../../public/images/furniture.png";
+
 const Hero = () => {
   return (
     <React.Fragment>
@@ -251,6 +254,20 @@ const Hero = () => {
           Tips & Tricks
         </h2>
         <div></div>
+      </section>
+
+      {/* Furniture section */}
+      <section id="furniture">
+        <h4 className="font-semibold text-center text-gray">
+          Share your setup with
+        </h4>
+        <h2 className="text-3xl font-bold text-center text-darkGray">
+          #FuniroFurniture
+        </h2>
+
+        <div className="w-full h-full">
+          <Image src={Furniture} alt="Funiro furniture preview" />
+        </div>
       </section>
     </React.Fragment>
   );
