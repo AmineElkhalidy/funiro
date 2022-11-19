@@ -21,6 +21,7 @@ import { images } from "../../data/data";
 
 // Arrow icon
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { HeartIcon, ShareIcon } from "@heroicons/react/24/outline";
 
 const Hero = () => {
   return (
@@ -174,7 +175,7 @@ const Hero = () => {
             {productsData.map((product) => (
               <article
                 key={product.id}
-                className="w-[220px] relative bg-zinc-50 cursor-pointer group"
+                className="w-[220px] relative bg-zinc-50 cursor-pointer group duration-300"
               >
                 <div>
                   <div className="relative">
@@ -207,7 +208,27 @@ const Hero = () => {
                 </div>
 
                 {/* Overlap content */}
-                <div className="top-0 left-0 w-full h-full group-hover:bg-black opacity-20 group-hover:absolute"></div>
+                <div className="hidden group-hover:block">
+                  <div className="absolute top-0 left-0 z-50 w-full h-full bg-black opacity-40">
+                    <div className="flex items-center justify-center h-full">
+                      <div className="space-y-4 text-center">
+                        <button className="px-8 py-2 text-sm font-medium bg-white text-main">
+                          Add to cart
+                        </button>
+
+                        <div className="flex items-center justify-center px-10 space-x-6 text-sm text-white ">
+                          <span className="inline-flex items-center gap-1">
+                            <ShareIcon className="w-5 h-5" /> Share
+                          </span>
+
+                          <span className="inline-flex items-center gap-1">
+                            <HeartIcon className="w-5 h-5" /> Like
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
