@@ -92,7 +92,6 @@ export const productsData = [
     oldPrice: "",
     promotionTag: "",
   },
-
   {
     id: "product-3",
     image: ProductThree,
@@ -102,7 +101,6 @@ export const productsData = [
     oldPrice: "Rp 14.000.000",
     promotionTag: "-50%",
   },
-
   {
     id: "product-4",
     image: ProductFour,
@@ -127,6 +125,24 @@ export const productsData = [
     name: "Muggo",
     description: "Small mug",
     newPrice: "Rp 150.000",
+    oldPrice: "",
+    promotionTag: "New",
+  },
+  {
+    id: "product-7",
+    image: ProductSeven,
+    name: "Pingky",
+    description: "Cute bed set",
+    newPrice: "Rp 7.000.000",
+    oldPrice: "Rp 14.000.000",
+    promotionTag: "New",
+  },
+  {
+    id: "product-8",
+    image: ProductEight,
+    name: "Potty",
+    description: "Minimalist flower pot",
+    newPrice: "Rp 500.000",
     oldPrice: "",
     promotionTag: "New",
   },

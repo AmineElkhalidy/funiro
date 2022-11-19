@@ -2,6 +2,8 @@ import React from "react";
 
 // Image
 import Image from "next/image";
+// Link
+import Link from "next/link";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,14 +14,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // Data
-import { heroData } from "../../data/data";
-import { featuresData } from "../../data/data";
+import { featuresData, productsData } from "../../data/data";
 
 // Images
 import { images } from "../../data/data";
 
 // Arrow icon
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { HeartIcon, ShareIcon } from "@heroicons/react/24/outline";
+
+// Furniture image
+import Furniture from "../../public/images/furniture.png";
 
 const Hero = () => {
   return (
@@ -162,13 +167,107 @@ const Hero = () => {
       </section>
 
       {/* Products section */}
-      <section id="products" className="mt-6">
-        <h2 className="text-3xl font-bold text-center text-darkGray">
+      <section id="products">
+        <h2 className="mb-10 text-3xl font-bold text-center text-darkGray">
           Our Products
         </h2>
 
-        {/* products container*/}
-        <div className="grid"></div>
+        {/* Products container */}
+        <div className="flex items-center justify-center">
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
+            {productsData.map((product) => (
+              <article
+                key={product.id}
+                className="w-[220px] relative bg-zinc-50 cursor-pointer group duration-300"
+              >
+                <div>
+                  <div className="relative">
+                    <Image src={product.image} alt="Product item image" />
+
+                    <div className="absolute right-4 top-4">
+                      <span className="block w-[2.2rem] h-[2.2rem] text-xs text-white bg-black rounded-full">
+                        <span className="flex items-center justify-center h-full">
+                          {product.promotionTag}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-3">
+                    <h3 className="mb-1 text-lg font-medium">{product.name}</h3>
+                    <p className="mb-1 text-[.8rem] text-gray">
+                      {product.description}
+                    </p>
+
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">
+                        {product.newPrice}
+                      </span>
+                      <span className="text-xs line-through text-gray">
+                        {product.oldPrice}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Overlap content */}
+                <div className="hidden group-hover:block">
+                  <div className="absolute top-0 left-0 z-50 w-full h-full bg-black bg-opacity-40">
+                    <div className="flex items-center justify-center h-full">
+                      <div className="space-y-4 text-center">
+                        <button className="px-8 py-3 text-sm font-medium bg-white text-main">
+                          Add to cart
+                        </button>
+
+                        <div className="flex items-center justify-center px-10 space-x-6 text-sm text-white ">
+                          <span className="inline-flex items-center gap-1">
+                            <ShareIcon className="w-5 h-5" /> Share
+                          </span>
+
+                          <span className="inline-flex items-center gap-1">
+                            <HeartIcon className="w-5 h-5" /> Like
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* Show more */}
+        <div className="mt-8 text-center">
+          <Link
+            href="/products"
+            className="inline-block px-10 py-3 font-medium border text-main border-main"
+          >
+            Show More
+          </Link>
+        </div>
+      </section>
+
+      {/* Tips section */}
+      <section id="tips">
+        <h2 className="my-10 text-3xl font-bold text-center text-darkGray">
+          Tips & Tricks
+        </h2>
+        <div></div>
+      </section>
+
+      {/* Furniture section */}
+      <section id="furniture">
+        <h4 className="font-semibold text-center text-gray">
+          Share your setup with
+        </h4>
+        <h2 className="text-3xl font-bold text-center text-darkGray">
+          #FuniroFurniture
+        </h2>
+
+        <div className="w-full h-full">
+          <Image src={Furniture} alt="Funiro furniture preview" />
+        </div>
       </section>
     </React.Fragment>
   );
