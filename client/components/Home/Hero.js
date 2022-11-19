@@ -163,8 +163,8 @@ const Hero = () => {
       </section>
 
       {/* Products section */}
-      <section id="products" className="space-y-10">
-        <h2 className="text-3xl font-bold text-center text-darkGray">
+      <section id="products">
+        <h2 className="mb-10 text-3xl font-bold text-center text-darkGray">
           Our Products
         </h2>
 
@@ -172,39 +172,49 @@ const Hero = () => {
         <div className="flex items-center justify-center">
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
             {productsData.map((product) => (
-              <article key={product.id} className="w-[220px] bg-zinc-50">
-                <div className="relative">
-                  <Image src={product.image} alt="Product item image" />
+              <article
+                key={product.id}
+                className="w-[220px] relative bg-zinc-50 cursor-pointer group"
+              >
+                <div>
+                  <div className="relative">
+                    <Image src={product.image} alt="Product item image" />
 
-                  <div className="absolute top-0 right-0">
-                    <span className="inline-block w-8 h-8 text-xs text-white bg-black rounded-full">
-                      {product.promotionTag}
-                    </span>
+                    <div className="absolute right-4 top-4">
+                      <span className="block w-[2.2rem] h-[2.2rem] text-xs text-white bg-black rounded-full">
+                        <span className="flex items-center justify-center h-full">
+                          {product.promotionTag}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-3">
+                    <h3 className="mb-1 text-lg font-medium">{product.name}</h3>
+                    <p className="mb-1 text-[.8rem] text-gray">
+                      {product.description}
+                    </p>
+
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">
+                        {product.newPrice}
+                      </span>
+                      <span className="text-xs line-through text-gray">
+                        {product.oldPrice}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="p-3">
-                  <h3 className="mb-1 text-lg font-medium">{product.name}</h3>
-                  <p className="mb-1 text-[.8rem] text-gray">
-                    {product.description}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">
-                      {product.newPrice}
-                    </span>
-                    <span className="text-xs line-through text-gray">
-                      {product.oldPrice}
-                    </span>
-                  </div>
-                </div>
+                {/* Overlap content */}
+                <div className="top-0 left-0 w-full h-full group-hover:bg-black opacity-20 group-hover:absolute"></div>
               </article>
             ))}
           </div>
         </div>
 
         {/* Show more */}
-        <div className="text-center">
+        <div className="mt-8 text-center">
           <Link
             href="/products"
             className="inline-block px-10 py-3 font-medium border text-main border-main"
