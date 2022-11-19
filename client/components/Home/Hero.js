@@ -2,6 +2,8 @@ import React from "react";
 
 // Image
 import Image from "next/image";
+// Link
+import Link from "next/link";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,8 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // Data
-import { heroData } from "../../data/data";
-import { featuresData } from "../../data/data";
+import { featuresData, productsData } from "../../data/data";
 
 // Images
 import { images } from "../../data/data";
@@ -162,13 +163,55 @@ const Hero = () => {
       </section>
 
       {/* Products section */}
-      <section id="products" className="mt-6">
+      <section id="products" className="space-y-10">
         <h2 className="text-3xl font-bold text-center text-darkGray">
           Our Products
         </h2>
 
         {/* Products container */}
-        <div className="grid"></div>
+        <div className="flex items-center justify-center">
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
+            {productsData.map((product) => (
+              <article key={product.id} className="w-[220px] bg-zinc-50">
+                <div className="relative">
+                  <Image src={product.image} alt="Product item image" />
+
+                  <div className="absolute top-0 right-0">
+                    <span className="inline-block w-8 h-8 text-xs text-white bg-black rounded-full">
+                      {product.promotionTag}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-3">
+                  <h3 className="mb-1 text-lg font-medium">{product.name}</h3>
+                  <p className="mb-1 text-[.8rem] text-gray">
+                    {product.description}
+                  </p>
+
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">
+                      {product.newPrice}
+                    </span>
+                    <span className="text-xs line-through text-gray">
+                      {product.oldPrice}
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* Show more */}
+        <div className="text-center">
+          <Link
+            href="/products"
+            className="inline-block px-10 py-3 font-medium border text-main border-main"
+          >
+            Show More
+          </Link>
+        </div>
       </section>
     </React.Fragment>
   );
