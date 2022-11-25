@@ -20,7 +20,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 // Data
-import { featuresData, productsData } from "../../data/data";
+import { featuresData, productsData, tipsData } from "../../data/data";
 
 // Images
 import { images } from "../../data/data";
@@ -144,7 +144,7 @@ const Hero = () => {
       </section>
 
       {/* Features section */}
-      <section className="" id="features">
+      <section id="features">
         {/* Container */}
         <div className="grid justify-center gap-16 py-20 md:grid-cols-2 md:gap-12 md:place-items-center lg:grid-cols-4 lg:px-16 lg:py-24 ">
           {featuresData.map((feature) => (
@@ -249,12 +249,57 @@ const Hero = () => {
         </div>
       </section>
 
+      {/* Inspiration section */}
+      <section
+        className="min-h-screen mt-10 bg-main/30"
+        id="inspiration"
+      ></section>
+
       {/* Tips section */}
-      <section className="my-20" id="tips">
-        <h2 className="my-10 text-3xl font-bold text-center text-darkGray">
+      <section className="my-16" id="tips">
+        <h2 className="mb-10 text-3xl font-bold text-center text-darkGray">
           Tips & Tricks
         </h2>
-        <div></div>
+
+        {/* Tips container */}
+        <div className="flex items-center justify-center">
+          <div className="grid max-w-6xl">
+            <Splide
+              className="w-full h-full"
+              options={{
+                type: "loop",
+                drag: "free",
+                gap: "1rem",
+                arrows: false,
+                pagination: false,
+                perPage: 3,
+                autoScroll: {
+                  pauseOnHover: true,
+                  pauseOnFocus: false,
+                  rewind: false,
+                  speed: 1,
+                },
+              }}
+            >
+              {tipsData.map((tip) => (
+                <SplideSlide key={tip.id}>
+                  <div className="overflow-hidden bg-white">
+                    <div className="mb-4">
+                      <Image src={tip.image} alt="tip descriptive image" />
+                    </div>
+
+                    <div className="">
+                      <h3 className="mb-3 text-lg font-semibold leading-5 ">
+                        {tip.title}
+                      </h3>
+                      <date className="text-sm text-gray">{tip.date}</date>
+                    </div>
+                  </div>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
+        </div>
       </section>
 
       {/* Furniture section */}
