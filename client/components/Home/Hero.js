@@ -31,7 +31,7 @@ const Hero = () => {
     <React.Fragment>
       {/* Hero section */}
       <section
-        className="mt-20 bg-opacity-30 bg-gradient-to-r from-main/60 to-lightGray/40"
+        className="bg-opacity-40 bg-gradient-to-r from-main/60 to-lightGray/20"
         id="hero"
       >
         <div className="relative pt-24">
@@ -145,7 +145,7 @@ const Hero = () => {
       {/* Features section */}
       <section className="" id="features">
         {/* Container */}
-        <div className="grid justify-center gap-16 py-12 md:grid-cols-2 md:gap-12 md:place-items-center lg:grid-cols-4 lg:px-16 ">
+        <div className="grid justify-center gap-16 py-20 md:grid-cols-2 md:gap-12 md:place-items-center lg:grid-cols-4 lg:px-16 lg:py-24 ">
           {featuresData.map((feature) => (
             <div
               key={feature.id}
@@ -241,7 +241,7 @@ const Hero = () => {
         <div className="mt-8 text-center">
           <Link
             href="/products"
-            className="inline-block px-10 py-3 font-medium border text-main border-main"
+            className="inline-block px-10 py-3 font-medium duration-300 border text-main border-main hover:bg-main hover:text-white"
           >
             Show More
           </Link>
@@ -249,7 +249,7 @@ const Hero = () => {
       </section>
 
       {/* Tips section */}
-      <section id="tips">
+      <section className="my-20" id="tips">
         <h2 className="my-10 text-3xl font-bold text-center text-darkGray">
           Tips & Tricks
         </h2>
@@ -261,7 +261,7 @@ const Hero = () => {
         <h4 className="font-semibold text-center text-gray">
           Share your setup with
         </h4>
-        <h2 className="text-3xl font-bold text-center text-darkGray">
+        <h2 className="mb-10 text-3xl font-bold text-center text-darkGray">
           #FuniroFurniture
         </h2>
 
