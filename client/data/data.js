@@ -19,6 +19,11 @@ import ProductSix from "../public/images/product-6.png";
 import ProductSeven from "../public/images/product-7.png";
 import ProductEight from "../public/images/product-8.png";
 
+// Tips images
+import TipOne from "../public/images/tip-1.png";
+import TipTwo from "../public/images/tip-2.png";
+import TipThree from "../public/images/tip-3.png";
+
 export const heroData = [
   {
     id: "slide-01",
@@ -145,6 +150,27 @@ export const productsData = [
     newPrice: "Rp 500.000",
     oldPrice: "",
     promotionTag: "New",
+  },
+];
+
+export const tipsData = [
+  {
+    id: "tip-1",
+    image: TipOne,
+    title: "How to create a living room to love",
+    date: "20 jan 2020",
+  },
+  {
+    id: "tip-2",
+    image: TipTwo,
+    title: "Solution for clean look working space",
+    date: "10 jan 2020",
+  },
+  {
+    id: "tip-3",
+    image: TipThree,
+    title: "Make your cooking activity more fun",
+    date: "20 jan 2020",
   },
 ];
 

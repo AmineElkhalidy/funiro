@@ -13,8 +13,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+// Splider slider
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
+import "@splidejs/splide/dist/css/splide.min.css";
+
 // Data
-import { featuresData, productsData } from "../../data/data";
+import { featuresData, productsData, tipsData } from "../../data/data";
 
 // Images
 import { images } from "../../data/data";
@@ -31,12 +37,12 @@ const Hero = () => {
     <React.Fragment>
       {/* Hero section */}
       <section
-        className="mt-20 bg-opacity-30 bg-gradient-to-r from-main/60 to-lightGray/40"
+        className="bg-opacity-40 bg-gradient-to-r from-main/60 to-lightGray/20"
         id="hero"
       >
         <div className="relative pt-24">
           {/* Info box */}
-          <div className="absolute top-0 z-40 px-8 py-12 bg-white/80 backdrop-blur-sm background left-14">
+          <div className="absolute z-40 px-8 py-12 top-4 bg-white/80 backdrop-blur-sm background left-14">
             <h2 className="mb-8 text-4xl font-bold text-darkGray">
               High-Quality
               <br />
@@ -56,96 +62,91 @@ const Hero = () => {
               Shop Now
             </button>
           </div>
-
-          {/* Slider */}
-          <Swiper
-            className="relative"
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            navigation
-            pagination={{ clickable: true }}
-            slidesPerView={1.85}
-            spaceBetween={25}
-            rewind={true}
-          >
-            <SwiperSlide>
-              <article className="relative">
-                <Image
-                  src={images[1]}
-                  className=""
-                  alt="Couches with 2 seats"
-                />
-
-                <div className="absolute px-6 py-4 right-8 bottom-8 bg-white/60 backdrop-blur-sm">
-                  <h3 className="text-xl font-medium">Bohauss</h3>
-                  <p className="mb-1 text-sm text-gray">
-                    Luxury big sofa 2-seat
-                  </p>
-
-                  <div className="flex items-center justify-between ">
-                    <span className="block">Rp 17.000.000</span>
-                    <span className="">
-                      <ArrowRightIcon className="w-4 h-4" />
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <article className="relative">
-                <Image
-                  src={images[0]}
-                  className="w-full"
-                  alt="Couches with 2 seats"
-                />
-
-                <div className="absolute px-6 py-4 right-8 bottom-8 bg-white/60 backdrop-blur-sm">
-                  <h3 className="text-xl font-medium">Bohauss</h3>
-                  <p className="mb-1 text-sm text-gray">
-                    Luxury big sofa 2-seat
-                  </p>
-
-                  <div className="flex items-center justify-between ">
-                    <span className="block">Rp 17.000.000</span>
-                    <span className="">
-                      <ArrowRightIcon className="w-4 h-4" />
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <article className="relative">
-                <Image
-                  src={images[2]}
-                  className=""
-                  alt="Couches with 2 seats"
-                />
-
-                <div className="absolute px-6 py-4 right-8 bottom-8 bg-white/60 backdrop-blur-sm">
-                  <h3 className="text-xl font-medium">Bohauss</h3>
-                  <p className="mb-1 text-sm text-gray">
-                    Luxury big sofa 2-seat
-                  </p>
-
-                  <div className="flex items-center justify-between ">
-                    <span className="block">Rp 17.000.000</span>
-                    <span className="">
-                      <ArrowRightIcon className="w-4 h-4" />
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </SwiperSlide>
-          </Swiper>
         </div>
+
+        {/* Slider */}
+        <Splide
+          className="relative w-full h-full"
+          options={{
+            type: "loop",
+            drag: "free",
+            gap: "1rem",
+            arrows: false,
+            pagination: false,
+            perPage: 1.5,
+            autoScroll: {
+              pauseOnHover: true,
+              pauseOnFocus: false,
+              rewind: false,
+              speed: 1,
+            },
+          }}
+          extensions={{ AutoScroll }}
+        >
+          <SplideSlide>
+            <article className="relative">
+              <Image src={images[1]} className="" alt="Couches with 2 seats" />
+
+              <div className="absolute px-6 py-4 right-8 bottom-8 bg-white/60 backdrop-blur-sm">
+                <h3 className="text-xl font-medium">Bohauss</h3>
+                <p className="mb-1 text-sm text-gray">Luxury big sofa 2-seat</p>
+
+                <div className="flex items-center justify-between ">
+                  <span className="block">Rp 17.000.000</span>
+                  <span className="">
+                    <ArrowRightIcon className="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+            </article>
+          </SplideSlide>
+
+          <SplideSlide>
+            <article className="relative">
+              <Image
+                src={images[0]}
+                className="w-full"
+                alt="Couches with 2 seats"
+              />
+
+              <div className="absolute px-6 py-4 right-8 bottom-8 bg-white/60 backdrop-blur-sm">
+                <h3 className="text-xl font-medium">Bohauss</h3>
+                <p className="mb-1 text-sm text-gray">Luxury big sofa 2-seat</p>
+
+                <div className="flex items-center justify-between ">
+                  <span className="block">Rp 17.000.000</span>
+                  <span className="">
+                    <ArrowRightIcon className="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+            </article>
+          </SplideSlide>
+
+          <SplideSlide>
+            <article className="relative">
+              <Image src={images[2]} className="" alt="Couches with 2 seats" />
+
+              <div className="absolute px-6 py-4 right-8 bottom-8 bg-white/60 backdrop-blur-sm">
+                <h3 className="text-xl font-medium">Bohauss</h3>
+                <p className="mb-1 text-sm text-gray">Luxury big sofa 2-seat</p>
+
+                <div className="flex items-center justify-between ">
+                  <span className="block">Rp 17.000.000</span>
+                  <span className="">
+                    <ArrowRightIcon className="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+            </article>
+          </SplideSlide>
+        </Splide>
       </section>
 
       {/* Features section */}
-      <section className="" id="features">
+      <section id="features">
         {/* Container */}
-        <div className="grid justify-center gap-16 py-12 md:grid-cols-2 md:gap-12 md:place-items-center lg:grid-cols-4 lg:px-16 ">
+        <div className="grid justify-center gap-16 py-20 md:grid-cols-2 md:gap-12 md:place-items-center lg:grid-cols-4 lg:px-16 lg:py-24 ">
           {featuresData.map((feature) => (
             <div
               key={feature.id}
@@ -241,19 +242,64 @@ const Hero = () => {
         <div className="mt-8 text-center">
           <Link
             href="/products"
-            className="inline-block px-10 py-3 font-medium border text-main border-main"
+            className="inline-block px-10 py-3 font-medium duration-300 border text-main border-main hover:bg-main hover:text-white"
           >
             Show More
           </Link>
         </div>
       </section>
 
+      {/* Inspiration section */}
+      <section
+        className="min-h-screen mt-10 bg-main/30"
+        id="inspiration"
+      ></section>
+
       {/* Tips section */}
-      <section id="tips">
-        <h2 className="my-10 text-3xl font-bold text-center text-darkGray">
+      <section className="my-16" id="tips">
+        <h2 className="mb-10 text-3xl font-bold text-center text-darkGray">
           Tips & Tricks
         </h2>
-        <div></div>
+
+        {/* Tips container */}
+        <div className="flex items-center justify-center">
+          <div className="grid max-w-6xl">
+            <Splide
+              className="w-full h-full"
+              options={{
+                type: "loop",
+                drag: "free",
+                gap: "1rem",
+                arrows: false,
+                pagination: false,
+                perPage: 3,
+                autoScroll: {
+                  pauseOnHover: true,
+                  pauseOnFocus: false,
+                  rewind: false,
+                  speed: 1,
+                },
+              }}
+            >
+              {tipsData.map((tip) => (
+                <SplideSlide key={tip.id}>
+                  <div className="overflow-hidden bg-white">
+                    <div className="mb-4">
+                      <Image src={tip.image} alt="tip descriptive image" />
+                    </div>
+
+                    <div className="">
+                      <h3 className="mb-3 text-lg font-semibold leading-5 ">
+                        {tip.title}
+                      </h3>
+                      <date className="text-sm text-gray">{tip.date}</date>
+                    </div>
+                  </div>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
+        </div>
       </section>
 
       {/* Furniture section */}
@@ -261,7 +307,7 @@ const Hero = () => {
         <h4 className="font-semibold text-center text-gray">
           Share your setup with
         </h4>
-        <h2 className="text-3xl font-bold text-center text-darkGray">
+        <h2 className="mb-10 text-3xl font-bold text-center text-darkGray">
           #FuniroFurniture
         </h2>
 
