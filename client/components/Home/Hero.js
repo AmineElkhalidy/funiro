@@ -15,8 +15,9 @@ import "swiper/css/pagination";
 
 // Splider slider
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-// Default theme
-import "@splidejs/react-splide/css";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
+import "@splidejs/splide/dist/css/splide.min.css";
 
 // Data
 import { featuresData, productsData } from "../../data/data";
@@ -62,17 +63,27 @@ const Hero = () => {
             </button>
           </div>
         </div>
+
         {/* Slider */}
-        <Swiper
-          className="relative"
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          navigation
-          pagination={{ clickable: true }}
-          slidesPerView={1.85}
-          spaceBetween={25}
-          rewind={true}
+        <Splide
+          className="relative w-full h-full"
+          options={{
+            type: "loop",
+            drag: "free",
+            gap: "1rem",
+            arrows: false,
+            pagination: false,
+            perPage: 1.5,
+            autoScroll: {
+              pauseOnHover: true,
+              pauseOnFocus: false,
+              rewind: false,
+              speed: 1,
+            },
+          }}
+          extensions={{ AutoScroll }}
         >
-          <SwiperSlide>
+          <SplideSlide>
             <article className="relative">
               <Image src={images[1]} className="" alt="Couches with 2 seats" />
 
@@ -88,9 +99,9 @@ const Hero = () => {
                 </div>
               </div>
             </article>
-          </SwiperSlide>
+          </SplideSlide>
 
-          <SwiperSlide>
+          <SplideSlide>
             <article className="relative">
               <Image
                 src={images[0]}
@@ -110,9 +121,9 @@ const Hero = () => {
                 </div>
               </div>
             </article>
-          </SwiperSlide>
+          </SplideSlide>
 
-          <SwiperSlide>
+          <SplideSlide>
             <article className="relative">
               <Image src={images[2]} className="" alt="Couches with 2 seats" />
 
@@ -128,8 +139,8 @@ const Hero = () => {
                 </div>
               </div>
             </article>
-          </SwiperSlide>
-        </Swiper>
+          </SplideSlide>
+        </Splide>
       </section>
 
       {/* Features section */}
