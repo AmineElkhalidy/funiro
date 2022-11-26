@@ -251,9 +251,30 @@ const Hero = () => {
 
       {/* Inspiration section */}
       <section
-        className="min-h-screen mt-10 bg-main/30"
+        className="h-full min-h-screen mt-10 bg-main/30"
         id="inspiration"
-      ></section>
+      >
+        {/* Container */}
+        <div className="flex flex-col items-center justify-center w-full h-full lg:flex-row">
+          {/* Content container */}
+          <div className="space-y-6 w-[50%]">
+            <h2 className="">50+ Beautiful rooms inspiration</h2>
+            <p className="">
+              Our designer already made a lot of beautiful prototype of rooms
+              that inspire you
+            </p>
+
+            <div>
+              <Link href={""} className="">
+                Explore More
+              </Link>
+            </div>
+          </div>
+
+          {/* Images slider */}
+          <div className=""></div>
+        </div>
+      </section>
 
       {/* Tips section */}
       <section className="my-16" id="tips">
@@ -262,8 +283,8 @@ const Hero = () => {
         </h2>
 
         {/* Tips container */}
-        <div className="flex items-center justify-center">
-          <div className="grid max-w-6xl">
+        <div className="w-full h-full">
+          <div className="flex items-center justify-center max-w-6xl mx-auto">
             <Splide
               className="w-full h-full"
               options={{
@@ -273,6 +294,7 @@ const Hero = () => {
                 arrows: false,
                 pagination: false,
                 perPage: 3,
+                focus: "center",
                 autoScroll: {
                   pauseOnHover: true,
                   pauseOnFocus: false,
@@ -283,7 +305,7 @@ const Hero = () => {
             >
               {tipsData.map((tip) => (
                 <SplideSlide key={tip.id}>
-                  <div className="overflow-hidden bg-white">
+                  <div className="overflow-hidden bg-white shadow-md">
                     <div className="mb-4">
                       <Image src={tip.image} alt="tip descriptive image" />
                     </div>
