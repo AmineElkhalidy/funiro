@@ -1,13 +1,18 @@
 // Hero images
-import HeroImg1 from "../public/images/home-1.png";
-import HeroImg2 from "../public/images/home-2.png";
-import HeroImg3 from "../public/images/home-3.png";
+import HeroImg1 from '../public/images/home-1.png';
+import HeroImg2 from '../public/images/home-2.png';
+import HeroImg3 from '../public/images/home-3.png';
 
 // Features image
-import FeatureOne from "../public/images/feature-1.png";
-import FeatureTwo from "../public/images/feature-2.png";
-import FeatureThree from "../public/images/feature-3.png";
-import FeatureFour from "../public/images/feature-4.png";
+import FeatureOne from '../public/images/feature-1.png';
+import FeatureTwo from '../public/images/feature-2.png';
+import FeatureThree from '../public/images/feature-3.png';
+import FeatureFour from '../public/images/feature-4.png';
+
+// Cart images
+import CartArrow from '../public/images/arrow-right.svg';
+import CartDummy1 from '../public/images/cartDummy1.png';
+import CartDummy2 from '../public/images/cartDummy2.png';
 
 // Products image
 import ProductOne from "../public/images/product-1.png";
@@ -26,55 +31,55 @@ import TipThree from "../public/images/tip-3.png";
 
 export const heroData = [
   {
-    id: "slide-01",
+    id: 'slide-01',
     image: HeroImg1,
-    name: "Bohauss",
-    description: "Luxury big sofa 2-seat",
-    surface: "Rp 17.000.000",
+    name: 'Bohauss',
+    description: 'Luxury big sofa 2-seat',
+    surface: 'Rp 17.000.000',
   },
   {
-    id: "slide-02",
+    id: 'slide-02',
     image: HeroImg2,
-    name: "Bohauss",
-    description: "Luxury big sofa 2-seat",
-    surface: "Rp 17.000.000",
+    name: 'Bohauss',
+    description: 'Luxury big sofa 2-seat',
+    surface: 'Rp 17.000.000',
   },
   {
-    id: "slide-03",
+    id: 'slide-03',
     image: HeroImg3,
-    name: "Bohauss",
-    description: "Luxury big sofa 2-seat",
-    surface: "Rp 17.000.000",
+    name: 'Bohauss',
+    description: 'Luxury big sofa 2-seat',
+    surface: 'Rp 17.000.000',
   },
 ];
 
 export const featuresData = [
   {
-    id: "feature-1",
+    id: 'feature-1',
     image: FeatureOne,
-    title: "High Quality",
-    description: "crafted from top materials",
+    title: 'High Quality',
+    description: 'crafted from top materials',
   },
 
   {
-    id: "feature-2",
+    id: 'feature-2',
     image: FeatureTwo,
-    title: "Warranty Protection",
-    description: "Over 2 years",
+    title: 'Warranty Protection',
+    description: 'Over 2 years',
   },
 
   {
-    id: "feature-3",
+    id: 'feature-3',
     image: FeatureThree,
-    title: "Free Shipping",
-    description: "Order over 150 $",
+    title: 'Free Shipping',
+    description: 'Order over 150 $',
   },
 
   {
-    id: "feature-4",
+    id: 'feature-4',
     image: FeatureFour,
-    title: "24/7 Support",
-    description: "Dedicated support",
+    title: '24/7 Support',
+    description: 'Dedicated support',
   },
 ];
 
@@ -174,4 +179,11 @@ export const tipsData = [
   },
 ];
 
-export const images = [HeroImg1, HeroImg2, HeroImg3];
+export const images = [
+  HeroImg1,
+  HeroImg2,
+  HeroImg3,
+  CartArrow,
+  CartDummy1,
+  CartDummy2,
+];
