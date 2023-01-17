@@ -1,5 +1,5 @@
+// Next components
 import Head from "next/head";
-import Image from "next/image";
 
 // Hero
 import Hero from "../components/Home/Hero";

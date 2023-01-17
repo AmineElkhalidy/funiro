@@ -185,13 +185,23 @@ const Hero = () => {
                   <div className="relative">
                     <Image src={product.image} alt="Product item image" />
 
-                    <div className="absolute right-4 top-4">
-                      <span className="block w-[2.2rem] h-[2.2rem] text-xs text-white bg-black rounded-full">
-                        <span className="flex items-center justify-center h-full">
-                          {product.promotionTag}
+                    {product.promotionTag !== "" ? (
+                      <div className="absolute right-4 top-4">
+                        <span
+                          className={`block w-[2.2rem] h-[2.2rem] text-xs text-white rounded-full ${
+                            product.promotionTag === "New"
+                              ? "bg-green-400"
+                              : "bg-main"
+                          }`}
+                        >
+                          <span className="flex items-center justify-center h-full">
+                            {product.promotionTag}
+                          </span>
                         </span>
-                      </span>
-                    </div>
+                      </div>
+                    ) : (
+                      <span></span>
+                    )}
                   </div>
 
                   <div className="p-3">
@@ -216,16 +226,16 @@ const Hero = () => {
                   <div className="absolute top-0 left-0 z-50 w-full h-full bg-black bg-opacity-40">
                     <div className="flex items-center justify-center h-full">
                       <div className="space-y-4 text-center">
-                        <button className="px-8 py-3 text-sm font-medium bg-white text-main">
+                        <button className="px-8 py-3 text-sm font-medium duration-300 bg-white text-main hover:bg-main hover:text-white">
                           Add to cart
                         </button>
 
                         <div className="flex items-center justify-center px-10 space-x-6 text-sm text-white ">
-                          <span className="inline-flex items-center gap-1">
+                          <span className="inline-flex items-center gap-1 hover:text-blue-600">
                             <ShareIcon className="w-5 h-5" /> Share
                           </span>
 
-                          <span className="inline-flex items-center gap-1">
+                          <span className="inline-flex items-center gap-1 hover:text-red-600">
                             <HeartIcon className="w-5 h-5" /> Like
                           </span>
                         </div>
@@ -257,7 +267,7 @@ const Hero = () => {
         {/* Container */}
         <div className="flex flex-col items-center justify-center w-full h-full lg:flex-row">
           {/* Content container */}
-          <div className="space-y-6 w-[50%]">
+          <div className="space-y-6 w-[50%] hidden">
             <h2 className="">50+ Beautiful rooms inspiration</h2>
             <p className="">
               Our designer already made a lot of beautiful prototype of rooms
@@ -283,49 +293,28 @@ const Hero = () => {
         </h2>
 
         {/* Tips container */}
-        <div className="w-full h-full">
-          <div className="flex items-center justify-center max-w-6xl mx-auto">
-            <Splide
-              className="w-full h-full"
-              options={{
-                type: "loop",
-                drag: "free",
-                gap: "1rem",
-                arrows: false,
-                pagination: false,
-                perPage: 3,
-                focus: "center",
-                autoScroll: {
-                  pauseOnHover: true,
-                  pauseOnFocus: false,
-                  rewind: false,
-                  speed: 1,
-                },
-              }}
-            >
-              {tipsData.map((tip) => (
-                <SplideSlide key={tip.id}>
-                  <div className="overflow-hidden bg-white shadow-md">
-                    <div className="mb-4">
-                      <Image src={tip.image} alt="tip descriptive image" />
-                    </div>
+        <div className="">
+          <div className="grid max-w-6xl gap-6 mx-auto place-items-center sm:grid-cols-2 md:grid-cols-3">
+            {tipsData.map((tip) => (
+              <div className="overflow-hidden bg-white shadow-md w-fit">
+                <div className="mb-4">
+                  <Image src={tip.image} alt="tip descriptive image" />
+                </div>
 
-                    <div className="">
-                      <h3 className="mb-3 text-lg font-semibold leading-5 ">
-                        {tip.title}
-                      </h3>
-                      <date className="text-sm text-gray">{tip.date}</date>
-                    </div>
-                  </div>
-                </SplideSlide>
-              ))}
-            </Splide>
+                <div className="p-2">
+                  <h3 className="mb-3 text-lg font-semibold leading-5 ">
+                    {tip.title}
+                  </h3>
+                  <date className="text-sm text-gray">{tip.date}</date>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Furniture section */}
-      <section id="furniture">
+      <section className="pt-8" id="furniture">
         <h4 className="font-semibold text-center text-gray">
           Share your setup with
         </h4>

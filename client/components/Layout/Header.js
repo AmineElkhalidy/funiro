@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid';
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import {
   HeartIcon,
   ShoppingCartIcon,
   MagnifyingGlassIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 
 // Link
-import Link from 'next/link';
+import Link from "next/link";
 
 // Search component
-import Search from '../Search/Search';
-import Profile from '../Profile/Profile';
+import Search from "../Search/Search";
+import Profile from "../Profile/Profile";
 
 const Header = () => {
   return (
@@ -32,9 +32,9 @@ const Header = () => {
             <li>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 font-medium duration-300 hover:text-accent"
+                className="inline-flex items-center gap-2 font-semibold duration-300 hover:text-accent"
               >
-                Products{' '}
+                Products{" "}
                 <span>
                   <ChevronDownIcon className="w-4 h-4" />
                 </span>
@@ -44,9 +44,9 @@ const Header = () => {
             <li>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 font-medium duration-300 hover:text-accent"
+                className="inline-flex items-center gap-2 font-semibold duration-300 hover:text-accent"
               >
-                Rooms{' '}
+                Rooms{" "}
                 <span>
                   <ChevronDownIcon className="w-4 h-4" />
                 </span>
@@ -56,9 +56,9 @@ const Header = () => {
             <li>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 font-medium duration-300 hover:text-accent"
+                className="inline-flex items-center gap-2 font-semibold duration-300 hover:text-accent"
               >
-                Inspiration{' '}
+                Inspiration{" "}
               </Link>
             </li>
           </ul>
