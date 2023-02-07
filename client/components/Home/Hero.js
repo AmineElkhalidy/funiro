@@ -146,7 +146,7 @@ const Hero = () => {
       {/* Features section */}
       <section id="features">
         {/* Container */}
-        <div className="grid justify-center gap-16 py-20 md:grid-cols-2 md:gap-12 md:place-items-center lg:grid-cols-4 lg:px-16 lg:py-24 ">
+        <div className="grid justify-center gap-16 py-20 md:grid-cols-2 md:gap-12 md:place-items-center lg:grid-cols-4 lg:px-16 lg:py-24">
           {featuresData.map((feature) => (
             <div
               key={feature.id}
@@ -168,7 +168,7 @@ const Hero = () => {
       </section>
 
       {/* Products section */}
-      <section id="products">
+      <section className="py-20 sm:py-24" id="products">
         <h2 className="mb-10 text-3xl font-bold text-center text-darkGray">
           Our Products
         </h2>
@@ -287,7 +287,7 @@ const Hero = () => {
       </section>
 
       {/* Tips section */}
-      <section className="my-16" id="tips">
+      <section className="py-20 md:py-24" id="tips">
         <h2 className="mb-10 text-3xl font-bold text-center text-darkGray">
           Tips & Tricks
         </h2>
@@ -314,7 +314,7 @@ const Hero = () => {
       </section>
 
       {/* Furniture section */}
-      <section className="pt-8" id="furniture">
+      <section className="py-20 md:py-24" id="furniture">
         <h4 className="font-semibold text-center text-gray">
           Share your setup with
         </h4>
