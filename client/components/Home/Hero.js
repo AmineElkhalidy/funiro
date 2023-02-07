@@ -5,19 +5,16 @@ import Image from "next/image";
 // Link
 import Link from "next/link";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 // Splider slider
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
-
 import "@splidejs/splide/dist/css/splide.min.css";
+
+// React Slik
+import Slider from "react-slick";
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Data
 import { featuresData, productsData, tipsData } from "../../data/data";
@@ -31,6 +28,29 @@ import { HeartIcon, ShareIcon } from "@heroicons/react/24/outline";
 
 // Furniture image
 import Furniture from "../../public/images/furniture.png";
+import Inspiration1 from "../../public/images/inspiration-1.png";
+import Inspiration2 from "../../public/images/inspiration-2.png";
+import Inspiration3 from "../../public/images/inspiration-3.png";
+
+const inspiration = [
+  {
+    image: Inspiration1,
+  },
+  {
+    image: Inspiration2,
+  },
+  {
+    image: Inspiration3,
+  },
+];
+
+const settings = {
+  dots: true,
+  infinite: false,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  arrows: false,
+};
 
 const Hero = () => {
   return (
@@ -83,7 +103,7 @@ const Hero = () => {
           }}
           extensions={{ AutoScroll }}
         >
-          <SplideSlide>
+          <SplideSlide key={1}>
             <article className="relative">
               <Image src={images[1]} className="" alt="Couches with 2 seats" />
 
@@ -101,7 +121,7 @@ const Hero = () => {
             </article>
           </SplideSlide>
 
-          <SplideSlide>
+          <SplideSlide key={2}>
             <article className="relative">
               <Image
                 src={images[0]}
@@ -123,7 +143,7 @@ const Hero = () => {
             </article>
           </SplideSlide>
 
-          <SplideSlide>
+          <SplideSlide key={3}>
             <article className="relative">
               <Image src={images[2]} className="" alt="Couches with 2 seats" />
 
@@ -260,29 +280,59 @@ const Hero = () => {
       </section>
 
       {/* Inspiration section */}
-      <section
-        className="h-full min-h-screen mt-10 bg-main/30"
-        id="inspiration"
-      >
+      <section className="w-full h-full bg-main/30" id="inspiration">
         {/* Container */}
-        <div className="flex flex-col items-center justify-center w-full h-full lg:flex-row">
-          {/* Content container */}
-          <div className="space-y-6 w-[50%] hidden">
-            <h2 className="">50+ Beautiful rooms inspiration</h2>
-            <p className="">
-              Our designer already made a lot of beautiful prototype of rooms
-              that inspire you
-            </p>
+        <div className="max-w-6xl min-h-screen px-4 py-20 mx-auto md:py-24">
+          <div className="grid gap-12 sm:grid-cols-2 ">
+            {/* Content container */}
+            <div className="w-full h-full space-y-6 sm:mt-14 md:mt-36">
+              <h2 className="text-3xl font-bold text-darkGray">
+                50+ Beautiful rooms inspiration
+              </h2>
+              <p className="text-sm">
+                Our designer already made a lot of beautiful prototype of rooms
+                that inspire you
+              </p>
 
-            <div>
-              <Link href={""} className="">
-                Explore More
-              </Link>
+              <div>
+                <Link
+                  href={""}
+                  className="inline-block px-10 py-3 font-medium text-white duration-300 bg-main"
+                >
+                  Explore More
+                </Link>
+              </div>
+            </div>
+
+            {/* Images slider */}
+            <div className="w-full h-full">
+              <Slider {...settings} className="grid">
+                <article key={1}>
+                  <Image
+                    className="w-[70%] md:w-[60%]"
+                    src={Inspiration1}
+                    alt="Inspiration"
+                  />
+                </article>
+
+                <article key={2}>
+                  <Image
+                    className="w-[70%] md:w-[60%]"
+                    src={Inspiration2}
+                    alt="Inspiration"
+                  />
+                </article>
+
+                <article key={3}>
+                  <Image
+                    className="w-[70%] md:w-[60%]"
+                    src={Inspiration3}
+                    alt="Inspiration"
+                  />
+                </article>
+              </Slider>
             </div>
           </div>
-
-          {/* Images slider */}
-          <div className=""></div>
         </div>
       </section>
 

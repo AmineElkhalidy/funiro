@@ -12,3 +12,14 @@ html {
 body {
   font-family: "Inter", sans-serif;
 }
+
+.slick-dots li button {
+  border: 1px solid #e89f71 !important;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.slick-dots li button::before {
+  font-size: 12px !important;
+  color: #e89f71 !important;
+}
