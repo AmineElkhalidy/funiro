@@ -29,13 +29,20 @@ const Footer = () => {
               products on our website
             </p>
 
-            <p className="flex items-center gap-2 mb-3 text-xs font-medium">
+            <Link
+              href="https://www.google.com/maps/place/San+Francisco,+CA,+USA/@37.757815,-122.5076409,12z/data=!3m1!4b1!4m5!3m4!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155"
+              className="flex items-center gap-2 mb-3 text-xs font-medium duration-300 hover:text-sm"
+              target="_blank"
+            >
               <MapPinIcon className="w-4 h-4" /> Sawojajar Malang, Indonesia
-            </p>
+            </Link>
 
-            <p className="flex items-center gap-2 mb-3 text-xs font-medium">
+            <Link
+              href="tel:+6289 456 3455"
+              className="flex items-center gap-2 mb-3 text-xs font-medium duration-300 hover:text-sm"
+            >
               <PhoneIcon className="w-4 h-4" /> +6289 456 3455
-            </p>
+            </Link>
 
             <Link
               href={"www.funiro.com"}
@@ -53,7 +60,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base "
                 >
                   Products
                 </Link>
@@ -62,7 +69,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base "
                 >
                   Rooms
                 </Link>
@@ -71,7 +78,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base "
                 >
                   Inspiration
                 </Link>
@@ -80,7 +87,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base "
                 >
                   About Us
                 </Link>
@@ -89,7 +96,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base "
                 >
                   Terms & Policy
                 </Link>
@@ -105,7 +112,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base"
                 >
                   My Account
                 </Link>
@@ -114,7 +121,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base"
                 >
                   Checkout
                 </Link>
@@ -123,7 +130,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base"
                 >
                   My Cart
                 </Link>
@@ -132,7 +139,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base"
                 >
                   My Catalog
                 </Link>
@@ -148,7 +155,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base"
                 >
                   Facebook
                 </Link>
@@ -157,7 +164,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base"
                 >
                   Instagram
                 </Link>
@@ -166,7 +173,7 @@ const Footer = () => {
               <li>
                 <Link
                   href=""
-                  className="font-medium duration-300 hover:text-main"
+                  className="font-medium duration-300 hover:text-main hover:text-base"
                 >
                   Twitter
                 </Link>
@@ -182,7 +189,7 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Enter your email"
-                className="block p-1 outline-none bg-gray/10 placeholder:text-sm"
+                className="block p-1 duration-300 outline-none bg-gray/10 placeholder:text-sm focus:border focus:border-main "
               />
 
               <span className="inline-block p-2 cursor-pointer bg-main">
