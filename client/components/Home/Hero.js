@@ -12,6 +12,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 // React Slik
 import Slider from "react-slick";
+
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -47,10 +48,37 @@ const inspiration = [
 const settings = {
   dots: true,
   infinite: false,
-  slidesToShow: 2,
+  slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
 };
+
+const responsive = [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      infinite: true,
+      dots: true,
+    },
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      initialSlide: 2,
+    },
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    },
+  },
+];
 
 const Hero = () => {
   return (
@@ -306,29 +334,21 @@ const Hero = () => {
 
             {/* Images slider */}
             <div className="w-full h-full">
-              <Slider {...settings} className="grid">
-                <article key={1}>
-                  <Image
-                    className="w-[70%] md:w-[60%]"
-                    src={Inspiration1}
-                    alt="Inspiration"
-                  />
+              <Slider
+                {...settings}
+                responsive={responsive}
+                className="flex gap-2"
+              >
+                <article className="mx-auto max-w-[80%] " key={1}>
+                  <Image className="" src={Inspiration1} alt="Inspiration" />
                 </article>
 
-                <article key={2}>
-                  <Image
-                    className="w-[70%] md:w-[60%]"
-                    src={Inspiration2}
-                    alt="Inspiration"
-                  />
+                <article className="mx-auto max-w-[80%] " key={2}>
+                  <Image className="" src={Inspiration2} alt="Inspiration" />
                 </article>
 
-                <article key={3}>
-                  <Image
-                    className="w-[70%] md:w-[60%]"
-                    src={Inspiration3}
-                    alt="Inspiration"
-                  />
+                <article className="mx-auto max-w-[80%] " key={3}>
+                  <Image className="" src={Inspiration3} alt="Inspiration" />
                 </article>
               </Slider>
             </div>
