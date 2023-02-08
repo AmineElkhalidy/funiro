@@ -363,15 +363,15 @@ const Hero = () => {
         </h2>
 
         {/* Tips container */}
-        <div className="">
+        <div className="w-full h-full">
           <div className="grid max-w-6xl gap-6 mx-auto place-items-center sm:grid-cols-2 md:grid-cols-3">
             {tipsData.map((tip) => (
               <div className="overflow-hidden bg-white shadow-md w-fit">
                 <div className="mb-4">
-                  <Image src={tip.image} alt="tip descriptive image" />
+                  <Image src={tip.image} alt="tip descriptive" />
                 </div>
 
-                <div className="p-2">
+                <div className="p-4">
                   <h3 className="mb-3 text-lg font-semibold leading-5 ">
                     {tip.title}
                   </h3>
